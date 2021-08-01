@@ -1,0 +1,11 @@
+Model Information:
+* title:	Red Shell
+* source:	https://sketchfab.com/3d-models/red-shell-0ba388d89b044c138a03d24d68839048
+* author:	OctoRock Studios (https://sketchfab.com/Piklopedian)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Red Shell" (https://sketchfab.com/3d-models/red-shell-0ba388d89b044c138a03d24d68839048) by OctoRock Studios (https://sketchfab.com/Piklopedian) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

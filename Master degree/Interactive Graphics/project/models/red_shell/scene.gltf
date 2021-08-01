@@ -1,0 +1,310 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        3.708983898162842,
+        3.478516101837158,
+        4.128905773162842
+      ],
+      "min": [
+        -3.708983898162842,
+        -3.478516101837158,
+        -4.128905773162842
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 3684,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        0.9998975992202759,
+        1.0,
+        0.9987785816192627
+      ],
+      "min": [
+        -0.9998975992202759,
+        -1.0,
+        -0.9996463060379028
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        0.9507132768630981,
+        0.9925841093063354
+      ],
+      "min": [
+        0.033783428370952606,
+        0.014679189771413803
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 2456,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        0.9844967722892761,
+        0.9833219051361084
+      ],
+      "min": [
+        0.01550315972417593,
+        0.015487900003790855
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 1608,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 7368,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        3.708983898162842,
+        3.478516101837158,
+        4.128905773162842
+      ],
+      "min": [
+        -3.708983898162842,
+        -3.478516101837158,
+        -4.128905773162842
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 11052,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        0.9998975992202759,
+        1.0,
+        0.9987785816192627
+      ],
+      "min": [
+        -0.9998975992202759,
+        -1.0,
+        -0.9996463060379028
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 4912,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        0.9507132768630981,
+        0.9925841093063354
+      ],
+      "min": [
+        0.033783428370952606,
+        0.014679189771413803
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 7368,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        0.9844967722892761,
+        0.9833219051361084
+      ],
+      "min": [
+        0.01550315972417593,
+        0.015487900003790855
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 6432,
+      "componentType": 5125,
+      "count": 1608,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "OctoRock Studios (https://sketchfab.com/Piklopedian)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/red-shell-0ba388d89b044c138a03d24d68839048",
+      "title": "Red Shell"
+    },
+    "generator": "Sketchfab-11.20.1",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 12864,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 9824,
+      "byteOffset": 12864,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 14736,
+      "byteOffset": 22688,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 37424,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/m_ItemKoura_baseColor.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "m_ItemKoura",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2,
+            "TEXCOORD_1": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TEXCOORD_0": 7,
+            "TEXCOORD_1": 8
+          },
+          "indices": 9,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.9999910593032837,
+        -0.004229974467307107,
+        0.0,
+        0.0,
+        0.004229974467307107,
+        0.9999910593032837,
+        0.0,
+        0.0,
+        -6.877847681607821e-06,
+        1.0244863005937075e-05,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "Collada visual scene group"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "Armature"
+    },
+    {
+      "children": [
+        4,
+        5
+      ],
+      "name": "Object_3"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_4"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_5"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ]
+}

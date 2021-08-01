@@ -1,0 +1,580 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        0.27601999044418335,
+        1.1639499664306641,
+        0.58079499006271362
+      ],
+      "min": [
+        -0.27884501218795776,
+        0.11132100224494934,
+        -0.28675699234008789
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 3684,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        0.99952197074890137,
+        0.9999961256980896,
+        0.99999511241912842
+      ],
+      "min": [
+        -0.99952197074890137,
+        -0.99962186813354492,
+        -0.98741978406906128
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        0.9883158802986145,
+        0.99226433038711548,
+        0.87624531984329224,
+        1
+      ],
+      "min": [
+        -0.98831593990325928,
+        -0.99999505281448364,
+        -0.9999961256980896,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 4912,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "min": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 307,
+      "max": [
+        0.99414098262786865,
+        0.9960939884185791
+      ],
+      "min": [
+        0.0019531298894435167,
+        0.00390625
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 1137,
+      "max": [
+        306
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 7368,
+      "componentType": 5126,
+      "count": 471,
+      "max": [
+        0.62509000301361084,
+        0.62463098764419556,
+        1.0730700492858887
+      ],
+      "min": [
+        -0.62335401773452759,
+        0.0468796007335186,
+        -0.97832900285720825
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 13020,
+      "componentType": 5126,
+      "count": 471,
+      "max": [
+        0.9986993670463562,
+        0.99999487400054932,
+        0.99962562322616577
+      ],
+      "min": [
+        -0.99883866310119629,
+        -0.99997502565383911,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 9824,
+      "componentType": 5126,
+      "count": 471,
+      "max": [
+        1,
+        0.9879949688911438,
+        0.99760431051254272,
+        1
+      ],
+      "min": [
+        -1,
+        -0.96057409048080444,
+        -0.99995344877243042,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 17360,
+      "componentType": 5126,
+      "count": 471,
+      "max": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "min": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 2456,
+      "componentType": 5126,
+      "count": 471,
+      "max": [
+        1.8808799982070923,
+        1.1757400035858154
+      ],
+      "min": [
+        -0.56289798021316528,
+        -0.43608599901199341
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 4548,
+      "componentType": 5125,
+      "count": 1083,
+      "max": [
+        470
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 18672,
+      "componentType": 5126,
+      "count": 208,
+      "max": [
+        0.61797797679901123,
+        0.43970099091529846,
+        0.62504398822784424
+      ],
+      "min": [
+        -0.61797797679901123,
+        -0.0012316700303927064,
+        -0.57127398252487183
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 21168,
+      "componentType": 5126,
+      "count": 208,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 24896,
+      "componentType": 5126,
+      "count": 208,
+      "max": [
+        0.74605613946914673,
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -0.74605613946914673,
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 28224,
+      "componentType": 5126,
+      "count": 208,
+      "max": [
+        0.70196080207824707,
+        0.70196080207824707,
+        0.70196080207824707,
+        1
+      ],
+      "min": [
+        0.49803921580314636,
+        0.49803921580314636,
+        0.49803921580314636,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 6224,
+      "componentType": 5126,
+      "count": 208,
+      "max": [
+        5.3123102188110352,
+        1.0002700090408325
+      ],
+      "min": [
+        -0.69082999229431152,
+        -1.0118700265884399
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 8880,
+      "componentType": 5125,
+      "count": 576,
+      "max": [
+        207
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "TheShibeLord (https://sketchfab.com/TheShibeLord)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/models/66cc131575344ab69238ec5872f24927",
+      "title": "Mario Kart"
+    },
+    "generator": "Sketchfab-3.18.7",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 11184,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7888,
+      "byteOffset": 11184,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 23664,
+      "byteOffset": 19072,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 31552,
+      "byteOffset": 42736,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 74288,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/mt_kart_Mario_S_baseColor.png"
+    },
+    {
+      "uri": "textures/mt_mario_baseColor.png"
+    },
+    {
+      "uri": "textures/mt_Kart_Mario_Tire_S_baseColor.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "mt_mario",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 1,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.59999999999999998
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "mt_kart_Mario_S",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.59999999999999998
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "mt_Kart_Mario_Tire_S",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 2,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.59999999999999998
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "mt_mario",
+      "primitives": [
+        {
+          "attributes": {
+            "COLOR_0": 3,
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 4
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "mt_kart_Mario_S",
+      "primitives": [
+        {
+          "attributes": {
+            "COLOR_0": 9,
+            "NORMAL": 7,
+            "POSITION": 6,
+            "TANGENT": 8,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "mt_Kart_Mario_Tire_S",
+      "primitives": [
+        {
+          "attributes": {
+            "COLOR_0": 15,
+            "NORMAL": 13,
+            "POSITION": 12,
+            "TANGENT": 14,
+            "TEXCOORD_0": 16
+          },
+          "indices": 17,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        -4.3711390063094768e-08,
+        0.999999999999999,
+        0,
+        0,
+        -0.999999999999999,
+        -4.3711390063094768e-08,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "Collada visual scene group"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6
+      ],
+      "name": "F2_Item_Kart_Mario_S"
+    },
+    {
+      "mesh": 0,
+      "name": "mt_mario"
+    },
+    {
+      "mesh": 1,
+      "name": "mt_kart_Mario_S"
+    },
+    {
+      "mesh": 2,
+      "name": "mt_Kart_Mario_Tire_S"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
+

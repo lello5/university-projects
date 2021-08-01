@@ -1,0 +1,499 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1740,
+      "max": [
+        187.00857543945312,
+        294.57009887695312,
+        341.36322021484375
+      ],
+      "min": [
+        -298.25393676757812,
+        -290.56454467773438,
+        -160.154296875
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 20880,
+      "componentType": 5126,
+      "count": 1740,
+      "max": [
+        0.99998843669891357,
+        0.99899470806121826,
+        0.99994897842407227
+      ],
+      "min": [
+        -0.99996668100357056,
+        -0.99879914522171021,
+        -0.99995452165603638
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 1740,
+      "max": [
+        0.98814517259597778,
+        1,
+        0.94572508335113525,
+        1
+      ],
+      "min": [
+        -0.9908413290977478,
+        -1,
+        -0.95345872640609741,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1740,
+      "max": [
+        1.0277777910232544,
+        1
+      ],
+      "min": [
+        0.0075961053371429443,
+        0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 8670,
+      "max": [
+        1739
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 41760,
+      "componentType": 5126,
+      "count": 1118,
+      "max": [
+        11.820412635803223,
+        -49.143161773681641,
+        102.94475555419922
+      ],
+      "min": [
+        -62.436000823974609,
+        -80.802154541015625,
+        50.017372131347656
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 55176,
+      "componentType": 5126,
+      "count": 1118,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 27840,
+      "componentType": 5126,
+      "count": 1118,
+      "max": [
+        1,
+        0.11020617932081223,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -0.11020567268133163,
+        -1,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 13920,
+      "componentType": 5126,
+      "count": 1118,
+      "max": [
+        1.0000002384185791,
+        1
+      ],
+      "min": [
+        0,
+        -1.1920928955078125e-07
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 34680,
+      "componentType": 5125,
+      "count": 5760,
+      "max": [
+        1117
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 68592,
+      "componentType": 5126,
+      "count": 819,
+      "max": [
+        197.78483581542969,
+        313.43878173828125,
+        357.65902709960938
+      ],
+      "min": [
+        -319.426513671875,
+        -309.4464111328125,
+        -145.96076965332031
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 78420,
+      "componentType": 5126,
+      "count": 819,
+      "max": [
+        0.99987632036209106,
+        0.99982166290283203,
+        0.99999898672103882
+      ],
+      "min": [
+        -0.99997037649154663,
+        -0.99988454580307007,
+        -0.97881072759628296
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 45728,
+      "componentType": 5126,
+      "count": 819,
+      "max": [
+        0.87884515523910522,
+        1,
+        0.99968814849853516,
+        1
+      ],
+      "min": [
+        -0.44640576839447021,
+        -1,
+        -0.99863171577453613,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 22864,
+      "componentType": 5126,
+      "count": 819,
+      "max": [
+        0.98498010635375977,
+        0.99246162176132202
+      ],
+      "min": [
+        0.015020005404949188,
+        0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 57720,
+      "componentType": 5125,
+      "count": 1674,
+      "max": [
+        818
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Anthony Yanez (https://sketchfab.com/paulyanez)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/models/c7fd163741614859ba02f302ce0bce32",
+      "title": "Banana Peel (Mario Kart)"
+    },
+    "generator": "Sketchfab-3.53.2",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 64416,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 29416,
+      "byteOffset": 64416,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 88248,
+      "byteOffset": 93832,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 58832,
+      "byteOffset": 182080,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 240912,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "02_-_Default",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.86666699999999997,
+          0.86666699999999997,
+          0.062745099999999998,
+          1
+        ],
+        "metallicFactor": 0.12305441189999999,
+        "roughnessFactor": 0.86482437600000006
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "07_-_Default",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.23921600000000001,
+          0.050980400000000002,
+          0.047058799999999998,
+          1
+        ],
+        "metallicFactor": 0.82002410889999999,
+        "roughnessFactor": 0.25876376990000005
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "03_-_Default",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.20392199999999999,
+          0.090196100000000001,
+          0,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.89297135959999996
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Banana Peel_02 - Default_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Banana Peel_07 - Default_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Banana Peel_03 - Default_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 11,
+            "POSITION": 10,
+            "TANGENT": 12,
+            "TEXCOORD_0": 13
+          },
+          "indices": 14,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "336c779f6369414bb22844db01a44ed5.fbx"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5,
+        6,
+        7
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.2204460492503131e-16,
+        -1,
+        0,
+        0,
+        1,
+        2.2204460492503131e-16,
+        0,
+        39.973434448242188,
+        -25.006340026855469,
+        -0.016741368919610977,
+        1
+      ],
+      "name": "Banana Peel"
+    },
+    {
+      "mesh": 0,
+      "name": "Banana Peel_02 - Default_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Banana Peel_07 - Default_0"
+    },
+    {
+      "mesh": 2,
+      "name": "Banana Peel_03 - Default_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
+
