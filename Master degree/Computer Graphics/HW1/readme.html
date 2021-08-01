@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+    /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700|Inconsolata:400,700);
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    width: 600px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 48px;
+    margin: 144px 0 24px 0;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 48px;
+    margin: 0 0 24px 0;
+}
+
+h3 {
+    font-size: 22px;
+    line-height: 24px;
+    margin: 48px 0 24px 0;
+}
+
+p, ul {
+    margin: 0 0 24px 0;
+}
+
+ul ul {
+    margin: 0 0 0 0;
+}
+
+pre {
+    margin: 0 0 24px 0;
+}
+
+code {
+    font-family: Inconsolata, monospace;
+}
+
+@media print {
+    body {
+        margin: 72px 72px;
+    }
+    @page {
+        margin: 48px 48px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Yocto/Raytrace: Tiny Raytracer</h1>
+<p>In this homework, you will learn the basics of image synthesis by
+implementing a simple, naive, path tracer. In particular, you will
+learn how to</p>
+<ul>
+<li>setup camera and image synthesis loops,</li>
+<li>usa ray-intersection queries,</li>
+<li>write simple shaders,</li>
+<li>write a naive path tracer with simple sampling.</li>
+</ul>
+<h2>Framework</h2>
+<p>The code uses the library <a href="https://github.com/xelatihy/yocto-gl"><strong>Yocto/GL</strong></a>,
+that is included in this project in the directory <code>yocto</code>.
+We suggest to consult the <a href="https://github.com/xelatihy/yocto-gl"><strong>documentation</strong></a>
+for the library. Also, since the library is getting improved
+during the duration of the course, we suggest that you <strong>star it and watch it</strong>
+on Github, so that you can notified as improvements are made.
+In particular, we will use</p>
+<ul>
+<li><strong>yocto_math.h</strong>: collection of math functions</li>
+<li><strong>yocto_sampling.h</strong>: collection of sampling routines</li>
+<li><strong>yocto_shading.h</strong>: collection of shading functions</li>
+<li><strong>yocto_image.{h,cpp}</strong>: image data structure and image loading and saving</li>
+<li><strong>yocto_commonio.h</strong>: helpers for writing command line apps</li>
+<li><strong>yocto_gui.{h,cpp}</strong>: helpers for writing simple GUIs</li>
+</ul>
+<p>In order to compile the code, you have to install
+<a href="https://apps.apple.com/it/app/xcode/id497799835?mt=12">Xcode</a>
+on OsX, <a href="https://visualstudio.microsoft.com/it/vs/">Visual Studio 2019</a> on Windows,
+or a modern version of gcc or clang on Linux,
+together with the tools <a href="www.cmake.org">cmake</a> and <a href="https://ninja-build.org">ninja</a>.
+The script <code>scripts/build.sh</code> will perform a simple build on OsX.
+As discussed in class, we prefer to use
+<a href="https://code.visualstudio.com">Visual Studio Code</a>, with
+<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">C/C++</a> and
+<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools">CMake Tools</a>
+extensions, that we have configured to use for this course.</p>
+<p>You will write your code in the file <code>yocto_raytrace.cpp</code> for functions that
+are declared in <code>yocto_raytrace.h</code>. Your renderer is called by <code>yscenetrace.cpp</code>
+for a command-line interface and <code>ysceneitraces.cpp</code> that show a simple
+user interface.</p>
+<p>This repository also contains tests that are executed from the command line
+as shown in <code>run.sh</code>. The rendered images are saved in the <code>out/</code> directory.
+The results should match the ones in the directory <code>check/</code>. High resolution
+images are computed by <code>run-highres.sh</code>.</p>
+<h2>Functionality (26 points)</h2>
+<p>In this homework you will implement the following features:</p>
+<ul>
+<li><strong>Main Rendering Loop</strong> in function <code>trace_samples()</code>:<ul>
+<li>implement the main rendering loop considering only 1 sample (the loop over
+  samples in done in the apps)</li>
+<li>from the slides this is like the progressive rendering loop but with only
+  one sample</li>
+<li>update the accumulation buffer, number of samples and final image for each
+  pixel of the <code>state</code> object</li>
+<li>use <code>get_trace_shader_func()</code> to get the shader from the options</li>
+<li>implement both a simple loop over pixel and a parallel one, as shown in code</li>
+<li>for each return value from the shader, clamp its color if above <code>params.clamp</code></li>
+</ul>
+</li>
+<li><strong>Color Shader</strong> in function <code>trace_color()</code>:<ul>
+<li>implement a shader that check for intersection and returns the material color</li>
+<li>use <code>intersect_scene_bvh()</code> for intersection</li>
+</ul>
+</li>
+<li><strong>Normal Shader</strong> in function <code>trace_normal()</code>:<ul>
+<li>implement a shader that check for intersection and returns the normal as a
+  color, with a scale and offset of 0.5 each</li>
+<li>implement <code>eval_normal()</code> for this</li>
+</ul>
+</li>
+<li><strong>Texcoord Shader</strong> in function <code>trace_texcoord()</code>:<ul>
+<li>implement a shader that check for intersection and returns the texture<br />
+  coordinates as a color in the red-green channels; use <code>fmod()</code> to force them
+  in the [0, 1] range</li>
+<li>implement <code>eval_texcoord()</code> for this</li>
+</ul>
+</li>
+<li><strong>Eyelight Shader</strong> in function <code>trace_eyelight()</code>:<ul>
+<li>implement a simple shader that compute diffuse lighting from the camera
+  center as in the slides</li>
+<li>use <code>eval_normal()</code> for this</li>
+</ul>
+</li>
+<li><strong>Raytrace Shader</strong> in function <code>trace_raytrace()</code>:<ul>
+<li>implement a shader that simulates illumination for a variety of materials
+  structured following the steps in the lecture notes</li>
+<li>implement environment lookup in <code>eval_environment()</code></li>
+<li>get position, normal and texcoords; correct normals for lines</li>
+<li>get material values by multiply material constants and textures, evaluated
+  using <code>eval_texture()</code> that you have to implement</li>
+<li>implement polished transmission, polished metals, rough metals,
+  rough plastic, and matte shading in hte order described in the slides</li>
+<li>you can use any function from Yocto/Shading such as <code>fresnel_schlick()</code>,
+  <code>microfacet_distribution()</code> and <code>microfacet_shadowing()</code></li>
+</ul>
+</li>
+</ul>
+<h2>Extra Credit (8 points)</h2>
+<ul>
+<li><strong>Refraction</strong> in function <code>trace_raytrace*()</code>:<ul>
+<li>implement refraction using <code>refract()</code> for the direction, </li>
+<li><code>reflectivity_to_eta()</code> to get the index of refraction from reflectivity (0.04)</li>
+<li>and remembering to invert the index of refraction when leaving a surface</li>
+</ul>
+</li>
+<li><strong>WYOS</strong>, write your own shader:<ul>
+<li>write additional shders and try them on some 3d models</li>
+<li>example: <a href="https://roystan.net/articles/toon-shader.html">cell shading</a></li>
+<li>example: <a href="http://viclw17.github.io/2016/05/01/MatCap-Shader-Showcase/">matcap shading 1</a>, 
+             <a href="https://github.com/hughsk/matcap">matcap shading 2</a></li>
+</ul>
+</li>
+</ul>
+<h2>Submission</h2>
+<p>To submit the homework, you need to pack a ZIP file that contains the code
+you write and the images it generates, i.e. the ZIP with only the
+<code>yocto_raytrace/</code> and <code>out/</code> directories.
+The file should be called <code>&lt;cognome&gt;_&lt;nome&gt;_&lt;numero_di_matricola&gt;.zip</code>,
+i.e. <code>&lt;lastname&gt;_&lt;firstname&gt;_&lt;studentid&gt;.zip</code>, and you should exclude
+all other directories. Send it on Google Classroom.</p>
+</body>
+</html>
