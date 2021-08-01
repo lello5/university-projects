@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Main Menu</title>
+        <link rel="icon" href="textures/mario_head.png" type="image/png" />
+
+        <style>
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-image:url("textures/menubackground.jfif");
+                background-size: 85% 100%;
+                background-repeat: no-repeat;
+                background-position-x: center;
+            }
+
+            .title{
+                background-color: white;
+                width: 50%;
+                margin-left: 24.5%;
+                margin-top: 5%;
+                border: 1px solid rgba(0, 0, 0, 1);
+                border-radius: 5em;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            
+            .select{
+                border: 1px solid rgba(0, 0, 0, 1);
+                border-radius:1.5em;
+                font-weight:1000;
+                font-size: 30px; 
+                color:black;
+                margin-top: 11%;
+                width: 16%;    
+                margin-left: 42%;
+                text-align: center;
+                background:white no-repeat;
+            }
+
+            .controls{
+                background-color: white;
+                border: 1px solid rgba(0, 0, 0, 1);
+                padding: 10px;
+                border-radius:0.2em;
+                font-weight:700;
+                font-size: large;
+                margin-top: 1.5%;
+                width: 10%;
+                margin-left: 71.5%;
+                text-align: center;
+            }
+            
+            #renderCanvas {
+                width: 100%;
+                height: 100%;
+                touch-action: none;
+            }
+        </style>
+
+        <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+        <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+        <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    </head>
+
+   <body>
+
+    <audio id="music" autoplay loop><source src="sounds/mainmenu.mp3"></audio>
+    <audio id = "mouse" src = "sounds/mouseover.mp3"></audio>
+
+    <audio onended="window.location.href = 'gameSelection.html';" id = "letsgo" src = "sounds/letsgo.mp3"></audio>
+
+    <img class="title" src="textures/gamelogo.png" alt="gamelogo">
+    <div id="yes" class="select" onclick="document.getElementById('letsgo').play();" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>PLAY!</p></div>
+
+    <div><button id="controls" class="controls" style="margin-top: 1%;" onclick="window.location.href = 'controls.html';" onmouseover="over(this.id)" onmouseout="out(this.id)">Game controls</button></div>
+    <div><button id="mute" class="controls" onclick="mute(this.id);" onmouseover="over(this.id)" onmouseout="out(this.id)">Mute music</button></div>
+    <div><button id="credits" class="controls" onclick="window.location.href = 'credits.html';" onmouseover="over(this.id)" onmouseout="out(this.id)">Credits</button></div>
+    
+
+    <script>
+        var browser = (function (agent) {
+            switch (true) {
+                case agent.indexOf("edge") > -1: return "MS Edge (EdgeHtml)";
+                case agent.indexOf("edg") > -1: return "MS Edge Chromium";
+                case agent.indexOf("opr") > -1 && !!window.opr: return "opera";
+                case agent.indexOf("chrome") > -1 && !!window.chrome: return "chrome";
+                case agent.indexOf("trident") > -1: return "Internet Explorer";
+                case agent.indexOf("firefox") > -1: return "firefox";
+                case agent.indexOf("safari") > -1: return "safari";
+                default: return "other";
+            }
+        })(window.navigator.userAgent.toLowerCase());
+        if(browser != 'chrome')
+            alert('Please, if possible access with Google Chrome browser for a better experience.');
+
+
+        function over (id){
+            document.getElementById('mouse').play();
+            document.getElementById(id).style.color = 'red';
+        }
+        function out (id){
+            document.getElementById(id).style.color = 'black';
+        }
+
+        function mute(id){
+            if(document.getElementById(id).innerHTML == 'Mute music'){
+                document.getElementById('music').pause();
+                document.getElementById(id).innerHTML = 'Unmute music';
+            }
+            else{
+                document.getElementById('music').play();
+                document.getElementById(id).innerHTML = 'Mute music';
+            }
+        }
+
+    </script>
+
+   </body>
+
+</html>

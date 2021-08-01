@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Game Selection</title>
+        <link rel="icon" href="textures/mario_head.png" type="image/png" />
+
+        <style>
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-image:url("textures/menubackground.jfif");
+                background-size: 85% 100%;
+                background-repeat: no-repeat;
+                background-position-x: center;
+            }
+
+            .parent{
+                width: 30%;
+                float: left;
+            }
+
+            .mainselect{
+                background-color: white;
+                width: 35%;
+                margin-left: 45%;
+                text-align: center;
+                font-size:30px;
+                border: 1px solid rgba(0, 0, 0, 1);
+                border-radius: 1.5em;
+                padding: 5px;
+                margin-top: 35%;
+            }
+            
+            .select{
+                border: 1px solid rgba(0, 0, 0, 1);
+                border-radius:1.5em;
+                font-weight:1000;
+                font-size: x-large; 
+                color:black;
+                margin-top: 6%;
+                width: 55%;    
+                margin-left: 37%;
+                text-align: center;
+                background:white no-repeat;
+            }
+
+            .controls{
+                background-color: white;
+                border: 1px solid rgba(0, 0, 0, 1);
+                padding: 10px;
+                border-radius:0.2em;
+                font-weight:700;
+                font-size: large;
+                margin-top: 1.5%;
+                width: 10%;
+                margin-left: 11.5%;
+                text-align: center;
+            }
+            
+            #renderCanvas {
+                width: 100%;
+                height: 100%;
+                touch-action: none;
+            }
+        </style>
+
+        <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+        <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+        <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    </head>
+
+   <body>
+
+    <audio id="music" autoplay loop><source src="sounds/mainmenu.mp3"></audio>
+    <audio id = "mouse" src = "sounds/mouseover.mp3"></audio>
+    <audio id = "track_sound" src = "sounds/mk64_luigi03.wav"></audio>
+    <audio id = "mario_sound" src = "sounds/mario.mp3"></audio>
+    <audio id = "toad_sound" src = "sounds/toad.mp3"></audio>
+    <audio id = "bowser_sound" src = "sounds/bowser.mp3"></audio>
+    <audio id = "donkey_sound" src = "sounds/donkey.mp3"></audio>
+    <audio onended="startRace();" id = "engine" src = "sounds/engine.mp3"></audio>
+
+
+    <div id="levels">
+        
+        <div class="parent">
+            <p class="mainselect">Select race!</p>
+            <div id="prix" class="select" style="background: url(textures/prix.png) no-repeat; background-size: 100% 140%; background-position: 50% 45%; margin-top: 1%;" onclick="selectionTrack('prix');" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>GRAND PRIX</p></div>
+            <div id="luigi" class="select" style="background: url(textures/luigi.png) no-repeat; background-size: 100% 220%; background-position: 100% 30%;" onclick="selectionTrack('luigi');" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>LUIGI CIRCUIT</p></div>
+            <div id="bowser_castle" class="select" style="background: url(textures/bowser.jpg) no-repeat; background-size: 100% 220%; background-position: 100% 40%;" onclick="selectionTrack('bowser_castle');" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>BOWSER'S CASTLE</p></div>
+            <div id="rainbow" class="select" style="background: url(textures/rainbow.png) no-repeat; background-size: 100% 250%; background-position: 100% 30%;" onclick="selectionTrack('rainbow');" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>RAINBOW ROAD</p></div>
+        </div>
+
+        <div class="parent">
+            <p class="mainselect" style="width: 60%; margin-right: 13%; float: right;">Select your character!</p>
+            <div id="mario" class="select" style="width:45%; margin-top: 51%; margin-left: 35%;" onclick="selection('mario');" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>MARIO</p></div>
+            <div id="toad" class="select" style="width:45%; margin-left: 35%;" onclick="selection('toad');" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>TOAD</p></div>
+            <div id="bowser" class="select" style="width:45%; margin-left: 35%;" onclick="selection('bowser');" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>BOWSER</p></div>
+            <div id="donkey" class="select" style="width:45%; margin-left: 35%;" onclick="selection('donkey');" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>DONKEY KONG</p></div>
+        </div>
+
+        <div class="parent">
+            <p class="mainselect" style="width: 50%; margin-right: 20%; float: right;">Start the race?</p>
+            <div id="yes" class="select" style="width:25%; margin-left: 42%; margin-top: 51%;" onclick="startEngine();" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>YES!</p></div>
+            <p id="message" style="width:65%; text-align: center; padding: 2px; margin-left: 23%; font-size:35px; font-weight: bold; color: red; -webkit-text-stroke: 2px black;"></p>
+        </div>
+
+        
+        <div><button id="controls" class="controls" onclick="window.location.href = 'controls.html';" onmouseover="over(this.id)" onmouseout="out(this.id)">Game controls</button></div>
+        <div><button id="mute" class="controls" onclick="mute(this.id);" onmouseover="over(this.id)" onmouseout="out(this.id)">Mute music</button></div>
+        <div><button id="credits" class="controls" onclick="window.location.href = 'credits.html';" onmouseover="over(this.id)" onmouseout="out(this.id)">Credits</button></div>
+    </div>
+
+    <script>
+        var character = '';
+        var track = '';
+
+        // text colour changes passing over (or out of) a button
+        function over (id){
+            document.getElementById('mouse').play();
+            document.getElementById(id).style.color = 'red';
+        }
+        function out (id){
+            if(character!=id && track!=id)
+                document.getElementById(id).style.color = 'black';
+        }
+        // selecting character/track functions: colour change and variables update
+        function selection(x){
+            if(character != '')
+                document.getElementById(character).style.color = 'black';
+            character = x;
+
+            if(x=='mario')
+                document.getElementById('mario_sound').play();
+            else if(x=='toad')
+                document.getElementById('toad_sound').play();
+            else if(x=='bowser')
+                document.getElementById('bowser_sound').play();
+            else
+                document.getElementById('donkey_sound').play();
+
+            document.getElementById(character).style.color = 'red';
+        }
+        function selectionTrack(x){
+            if(track != '')
+                document.getElementById(track).style.color = 'black';
+            document.getElementById('track_sound').play();
+            track = x;
+            document.getElementById(track).style.color = 'red';
+        }
+
+        // mute sound button
+        function mute(id){
+            if(document.getElementById(id).innerHTML == 'Mute music'){
+                document.getElementById('music').pause();
+                document.getElementById(id).innerHTML = 'Unmute music';
+            }
+            else{
+                document.getElementById('music').play();
+                document.getElementById(id).innerHTML = 'Mute music';
+            }
+        }
+
+        // start the race if and only if both character and track are selected
+        function startEngine(){
+            if(character != '' && track != ''){
+                document.getElementById('engine').play();
+            }
+            else{
+                document.getElementById('message').innerHTML = 'Select both character and race track!';
+            }
+        }
+
+        // the character and score (if grand prix is selected) variables are passed to the next HTML file attaching them to its link
+        function startRace(){
+            if(track == 'prix'){
+                if(character=='mario')
+                    window.location.href = 'luigiCircuit.html?character=mario&score=0';
+                else if(character=='toad')
+                    window.location.href = 'luigiCircuit.html?character=toad&score=0';
+                else if(character=='bowser')
+                    window.location.href = 'luigiCircuit.html?character=bowser&score=0';
+                // donkey
+                else
+                    window.location.href = 'luigiCircuit.html?character=donkey&score=0';
+            }
+
+            else if(track == 'luigi'){
+                if(character=='mario')
+                    window.location.href = 'luigiCircuit.html?character=mario';
+                else if(character=='toad')
+                    window.location.href = 'luigiCircuit.html?character=toad';
+                else if(character=='bowser')
+                    window.location.href = 'luigiCircuit.html?character=bowser';
+                // donkey
+                else
+                    window.location.href = 'luigiCircuit.html?character=donkey';
+            }
+
+            else if(track == 'bowser_castle'){
+                if(character=='mario')
+                    window.location.href = 'bowserCastle.html?character=mario';
+                else if(character=='toad')
+                    window.location.href = 'bowserCastle.html?character=toad';
+                else if(character=='bowser')
+                    window.location.href = 'bowserCastle.html?character=bowser';
+                // donkey
+                else
+                    window.location.href = 'bowserCastle.html?character=donkey';
+            }
+
+            //rainbow
+            else{
+                if(character=='mario')
+                    window.location.href = 'rainbowRoad.html?character=mario';
+                else if(character=='toad')
+                    window.location.href = 'rainbowRoad.html?character=toad';
+                else if(character=='bowser')
+                    window.location.href = 'rainbowRoad.html?character=bowser';
+                // donkey
+                else
+                    window.location.href = 'rainbowRoad.html?character=donkey';
+            }
+        }
+    </script>
+
+   </body>
+
+</html>

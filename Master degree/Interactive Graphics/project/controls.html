@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Game Controls</title>
+        <link rel="icon" href="textures/mario_head.png" type="image/png" />
+
+        <style>
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-image:url("textures/controls_background.jpg");
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-position-x: center;
+            }
+
+            #renderCanvas {
+                width: 100%;
+                height: 100%;
+                touch-action: none;
+            }
+
+            .menu{
+                background-color: rgba(170, 21, 30, 1);
+                border: 2px solid rgba(0, 0, 0, 1);
+                border-radius:0.8em;
+                font-weight:1000;
+                font-size: x-large; 
+                color:white;
+                margin-right: 6%;
+                margin-left: 74%;
+                text-align: center;
+                padding: 15px;
+                margin-top: 3.5%;
+            }
+        </style>
+
+        <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+        <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+        <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    </head>
+
+   <body>
+    <audio id="music" autoplay loop><source src="sounds/mainmenu.mp3"></audio>
+    <audio id = "mouse" src = "sounds/mouseover.mp3"></audio>
+    <img style="position: absolute; margin-top: 8.5%; margin-left: 5%; width: 651.66px; height: 213.33px;" src="textures/keyboard.png" alt="keyboard">
+    <img style="margin-top: 1%; margin-left: 52%;"src="textures/mario_jump.png" alt="jumping_mario">
+
+    <div id="menu" class="menu" onclick="window.location.href = 'index.html';" onmouseover="over(this.id)" onmouseout="out(this.id)">Back to Main Menu</div>
+
+    <script>
+        function over (id){
+            document.getElementById('mouse').play();
+            document.getElementById(id).style.color = 'black';
+        }
+        function out (id){
+            document.getElementById(id).style.color = 'white';
+        }
+
+    </script>
+
+   </body>
+
+</html>

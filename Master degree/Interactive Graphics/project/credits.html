@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Credits</title>
+        <link rel="icon" href="textures/mario_head.png" type="image/png" />
+
+        <style>
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-image:url("textures/logo_sapienza.jpg");
+                background-size: 50% 40%;
+                background-repeat: no-repeat;
+            }
+            
+            .list{
+                background-color: rgba(170, 21, 30, 1);
+                border: 2px solid rgba(0, 0, 0, 1);
+                border-radius:0.8em;
+                font-weight:1000;
+                font-size: x-large; 
+                color:white;
+                margin-top: 2%;         
+                margin-right: 10%;
+                margin-left: 70%;
+                text-align: center;
+            }
+
+            
+            #renderCanvas {
+                width: 100%;
+                height: 100%;
+                touch-action: none;
+            }
+        </style>
+
+        <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+        <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+        <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    </head>
+
+   <body>
+    <audio id="music"><source src="sounds/champions.mp3"></audio>
+    <audio id = "mouse" src = "sounds/mouseover.mp3"></audio>
+
+    <div id="levels">
+
+        <div id="io" class="list" onclick="window.location.href = 'https://it.linkedin.com/in/leandro-maglianella-9807901ab';" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>Leandro Maglianella</p></div>
+        <div id="lorenzo" class="list" onclick="window.location.href = 'https://it.linkedin.com/in/lorenzo-nicoletti-8374071b0';" onmouseover="over(this.id)" onmouseout="out(this.id)"><p>Lorenzo Nicoletti</p></div>
+        <div id='menu' class="list" style="padding: 5px;" onclick="window.location.href = 'index.html';" onmouseover="over(this.id)" onmouseout="out(this.id)">Back to Main Menu</div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('music').play();
+        }, 5000);
+        
+        function over (id){
+            document.getElementById('mouse').play();
+            document.getElementById(id).style.color = 'black';
+        }
+        function out (id){
+            document.getElementById(id).style.color = 'white';
+        }
+
+    </script>
+
+   </body>
+
+</html>
