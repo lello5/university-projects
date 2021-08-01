@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+    <style>
+        #Start{
+            background-color:#1df32f;
+            border:1em solid rgba(255, 255, 255,0);
+            border-radius:1em;
+            font-weight:600;  
+            color:black;            
+            margin-right: 10px;
+            margin-left: 14%;
+        }
+
+        #Reset{
+            background-color:#ff3d3d;
+            border:1em solid rgba(255, 255, 255,0);
+            border-radius:1em;
+            font-weight:600;
+            color:black;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        #error{
+            background-color:#ff0000;
+            margin-left: 14%;
+            padding: 0px;
+            width: 64.5%;
+            text-align: center;
+        }
+
+        .parent{
+            width: 100%;
+            float: left;
+        } 
+
+        .child{
+            width: 12%;
+            float: left;
+            padding-right: 10px;
+            padding-left: 10px;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        canvas{
+            padding-left: 10px;
+        }
+
+        input{
+            margin-bottom: 15px;
+        }
+    </style>
+
+    <body>
+        <div class = "parent">
+            <button id= "Start">Start Animation</button>
+            <button id= "Reset">Reset Animation</button>
+            <h3 id="error"></h3>
+        </div>
+
+        <div class = "child">
+            <p><b>CAMERA CONTROLS:</b></p>
+            <p><b>Theta</b></p>-180<input id="thetaSlider" type="range" min="-180" max="180" step="5" value="15" />180
+            <p><b> Phi</b></p>-180<input id="phiSlider" type="range" min="-180" max="180" step="5" value="15" />180
+            <p><b>Height</b></p>1<input id="heightSlider" type="range" min="1" max="60" step="1" value="26" />60
+            <p><b>Width</b></p>1<input id="widthSlider" type="range" min="1" max="120" step="1" value="52" />120
+            <p><b> Depth</b></p>1<input id="depthSlider" type="range" min="1" max="100" step="1" value="80" />100
+            <p><b> Radius</b></p>10<input id="radiusSlider" type="range" min="10" max="65" step="1" value="12" />65
+        </div>  
+
+        <canvas id="gl-canvas" width="1080" height="540">Oops ... your browser doesn't support the HTML5 canvas element</canvas>
+
+        <script id="vertex-shader" type="x-shader/x-vertex">
+            #version 300 es
+    
+            in vec4 aPosition;
+            in vec3 aNormal, aTangent;
+            in vec2 aTexCoord;
+    
+            uniform mat3 uNormalMatrix;
+            uniform mat4 uModelViewMatrix, uProjectionMatrix;
+            uniform vec4 uAmbientProduct, uDiffuseProduct, uSpecularProduct, uLightPosition;
+            uniform float uShininess;
+            uniform sampler2D uGrassTextureMap, uWoolTextureMap, uFenceTextureMap, uBumpTextureMap;
+            uniform bool uGrassFlag, uWoolFlag, uFenceFlag, uBumpFlag, uEyeFlag, uOkayFlag;
+
+            out vec2 vTexCoord;
+            out vec3 N, E, L;
+    
+            void main(){
+                gl_Position = uProjectionMatrix * uModelViewMatrix * aPosition;
+                vTexCoord = aTexCoord;
+                vec3 pos = (uModelViewMatrix *aPosition).xyz;
+
+                // fixed light postion
+                vec3 light = uLightPosition.xyz;
+                E = -normalize(pos);
+                N = normalize(uNormalMatrix*aNormal);
+                vec3 T  = normalize(uNormalMatrix*aTangent);
+                vec3 B = cross(N, T);
+                L.x = dot(T, light-pos);
+                L.y = dot(B, light-pos);
+                L.z = dot(N, light-pos);
+                L = normalize(L);
+                if (uBumpFlag==false){
+                    if(uLightPosition.w == 0.0) L = normalize(light);
+                    else L = normalize( light - pos );
+                }
+            }
+        </script>
+    
+        <script id="fragment-shader" type="x-shader/x-fragment">
+            #version 300 es
+    
+            precision highp float;
+    
+            in vec2 vTexCoord;
+            in vec3 N, E, L;
+
+            uniform vec4 uAmbientProduct, uDiffuseProduct, uSpecularProduct, uLightPosition;
+            uniform float uShininess;
+            uniform sampler2D uGrassTextureMap, uWoolTextureMap, uFenceTextureMap, uBumpTextureMap;
+            uniform bool uGrassFlag, uWoolFlag, uFenceFlag, uBumpFlag, uEyeFlag, uOkayFlag;
+
+            out vec4 fColor;
+    
+            void main(){
+                vec3 H = normalize(L + E);
+
+                // Bump texture
+                if(uBumpFlag==true){
+                    vec4 N = texture(uBumpTextureMap, vTexCoord);
+                    vec3 NN =  normalize(2.0*N.xyz-1.0);
+
+                    // Compute terms in the illumination equation
+                    vec4 ambient = uAmbientProduct;
+
+                    float Kd = max(dot(NN, L), 0.0);
+                    vec4  diffuse = Kd*uDiffuseProduct;
+    
+                    float Ks = pow( max(dot(NN, H), 0.0), uShininess);
+                    vec4  specular = Ks * uSpecularProduct;
+                    if( dot(L, NN) < 0.0 ) specular = vec4(0.0, 0.0, 0.0, 1.0);
+                    
+                    vec4 illumination = ambient + diffuse + specular;
+                    fColor = illumination;
+                }
+                // All the other textures
+                else{                        
+                    // Compute terms in the illumination equation
+                    vec4 ambient = uAmbientProduct;
+
+                    float Kd = max(dot(L, N), 0.0);
+                    vec4  diffuse = Kd*uDiffuseProduct;
+
+                    float Ks = pow( max(dot(N, H), 0.0), uShininess);
+                    vec4  specular = Ks * uSpecularProduct;
+                    if( dot(L, N) < 0.0 ) specular = vec4(0.0, 0.0, 0.0, 1.0);
+
+                    vec4 illumination = ambient + diffuse + specular;
+
+                    // If the texture images are correctly loaded
+                    if(uOkayFlag==true){         
+                        if(uGrassFlag==true){
+                            fColor = illumination*texture(uGrassTextureMap, vTexCoord);
+                        }
+                        else if(uWoolFlag==true){
+                            fColor = illumination*texture(uWoolTextureMap, vTexCoord);
+                        }
+                        else if(uFenceFlag==true){
+                            fColor = illumination*texture(uFenceTextureMap, vTexCoord);
+                        }
+                        else if(uEyeFlag==true){
+                            fColor = illumination*vec4(0.0, 0.0, 0.0, 1.0);
+                        }
+                    }
+                    // If the texture images are NOT correctly loaded
+                    else{
+                        if(uGrassFlag==true){
+                            fColor = illumination*vec4(0.52, 0.75, 0.07, 0.0);
+                        }
+                        else if(uWoolFlag==true){
+                            fColor = illumination*vec4(0.83, 0.83, 0.83, 1.0);
+                        }
+                        else if(uFenceFlag==true){
+                            fColor = illumination*vec4(0.52, 0.37, 0.26, 1.0);
+                        }
+                        else if(uEyeFlag==true){
+                            fColor = illumination*vec4(0.0, 0.0, 0.0, 1.0);
+                        }   
+                    }
+                }
+                fColor.a = 1.0;
+            }
+        </script>
+    
+        <script type="text/javascript" src="../Common/InitShaders.js"></script>
+        <script type="text/javascript" src="../Common/MVnew.js"></script>
+        <script type="text/javascript" src="Homework2.js"></script>
+        <img id = "texImage1" src = "grass.jpg" hidden></img>
+        <img id = "texImage2" src = "wool.jpg" hidden></img>
+        <img id = "texImage3" src = "fence.jpg" hidden></img>
+        
+        <!-- Here I was just experimenting with base64, but I still preferred using .jpg images -->
+        <img id = "texImage4" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" hidden></img>
+
+    </body>
+
+</html>

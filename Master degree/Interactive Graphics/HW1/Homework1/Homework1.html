@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    .parent {
+        width: 95%;
+        float: left;
+        padding: 10px;
+    } 
+    .child {
+        width: 13%;
+        float: left;
+        padding: 10px;
+    }  
+    </style>
+
+    <body>
+
+        <canvas id="gl-canvas" width="512" height="512"></canvas>
+
+        <h2> EXERCISE 2 </h2>
+        <button id = "ButtonT">Toggle Rotation</button>
+        <button id = "ButtonO">Rotation Orientation</button>
+        <button id = "ButtonX">Rotate X</button>
+        <button id = "ButtonY">Rotate Y</button>
+        <button id = "ButtonZ">Rotate Z</button>
+        <button id = "ButtonF">Faster Rotation</button>
+        <button id = "ButtonS">Slower Rotation</button>
+        <button id = "ButtonB">Barycenter Rotation</button>
+
+        <div class = "parent">
+            <h2> EXERCISE 3 </h2>
+            <div class = "child"><h3> theta</h3>-180<input id="thetaSlider" type="range" min="-180" max="180" step="5" value="0" />180</div>
+            <div class = "child"><h3> phi</h3>-180<input id="phiSlider" type="range" min="-180" max="180" step="5" value="0" />180</div>
+            <div class = "child"><h3> radius</h3>1<input id="radiusSlider" type="range" min="1" max="5" step="0.1" value="3" />5</div>
+            <div class = "child"><h3> z Near</h3>1<input id="nearSlider" type="range" min="1.0" max="2.0" step="0.05" value="1.1" />2</div>
+            <div class = "child"><h3> z Far</h3>1<input id="farSlider" type="range" min="1.0" max="5.0" step="1" value="4" />5</div>
+            <div class = "child"><h3> Fov</h3> 10<input id="fovSlider" type="range" min="10" max="100" step="5" value="50" />100</div>
+            <div class = "child"><h3>Aspect</h3> 0.5<input id="aspectSlider" type="range" min="0.5" max="2" step="0.1" value="1" />2</div>
+        </div>
+
+        <div class = "parent">
+            <div class = "child"><h2> EXERCISE 4 </h2><button id = "ButtonLight">Light Switch</button></div>
+            <div class = "child"><h2> EXERCISE 6 </h2><button id = "ButtonShader">Toggle Shader</button></div>
+            <div class = "child"><h2> EXERCISE 7 </h2><button id = "ButtonTexture">Toggle Texture</button></div>
+        </div>
+
+        <script id="vertex-shader" type="x-shader/x-vertex">
+        #version 300 es
+
+        in vec2 aTexCoord;
+        in vec3 aNormal, aTangent;
+        in vec4 aPosition;
+
+        out vec2 vTexCoord;
+        out vec3 N, E, L1, L2, L3;
+        out vec4 vColor;
+
+        uniform mat4 uModelViewMatrix, uModelViewMatrixCyl, uProjectionMatrix;
+        uniform mat3 uNormalMatrix;
+        uniform vec4 uAmbientProduct1, uDiffuseProduct1, uSpecularProduct1;
+        uniform vec4 uAmbientProduct2, uDiffuseProduct2, uSpecularProduct2;
+        uniform vec4 uAmbientProduct3, uDiffuseProduct3, uSpecularProduct3;
+        uniform vec4 uLightPosition1, uLightPosition2, uLightPosition3;
+        uniform float uShininess, uShader, uLight, uTexture, uCyl;
+
+        void main(){
+            gl_Position = uProjectionMatrix * uModelViewMatrix * aPosition;
+            vec3 pos = (uModelViewMatrix *aPosition).xyz;
+
+
+            vTexCoord = aTexCoord;
+
+            // fixed light postion
+            vec3 light1 = uLightPosition1.xyz;
+            vec3 light2 = uLightPosition2.xyz;
+            vec3 light3 = uLightPosition3.xyz;
+
+            E = -normalize(pos);
+            N = normalize(uNormalMatrix*aNormal);
+            vec3 T  = normalize(uNormalMatrix*aTangent);
+            vec3 B = cross(N, T);
+
+            // Texture toggled
+            if(uTexture==1.0){
+                L1.x = dot(T, light1-pos);
+                L1.y = dot(B, light1-pos);
+                L1.z = dot(N, light1-pos);
+        
+                L2.x = dot(T, light2-pos);
+                L2.y = dot(B, light2-pos);
+                L2.z = dot(N, light2-pos);
+
+                L3.x = dot(T, light3-pos);
+                L3.y = dot(B, light3-pos);
+                L3.z = dot(N, light3-pos);
+
+                L1 = normalize(L1);
+                L2 = normalize(L2);
+                L3 = normalize(L3);
+            }
+            // Texture not toggled
+            else{
+                // directional light check
+                if(uLightPosition1.w == 0.0) L1 = normalize(light1);
+                else L1 = normalize( light1 - pos );
+                if(uLightPosition2.w == 0.0) L2 = normalize(light2);
+                else L2 = normalize( light2 - pos );
+                if(uLightPosition3.w == 0.0) L3 = normalize(light2);
+                else L3 = normalize( light3 - pos );
+
+                // EXERCISE 6 ------------------------------------------------------------------------------------------------------------------------------
+                // Shader toggled -> per-vertex shading mode
+                if(uShader==1.0){
+                    vec3 H1 = normalize(L1 + E);
+                    vec3 H2 = normalize(L2 + E);
+                    vec3 H3 = normalize(L3 + E);
+
+                    // Compute terms in the illumination equation
+                    vec4 ambient1 = uAmbientProduct1;
+                    vec4 ambient2 = uAmbientProduct2;
+                    vec4 ambient3 = uAmbientProduct3;
+
+                    float Kd1 = max(dot(L1, N), 0.0);
+                    vec4  diffuse1 = Kd1*uDiffuseProduct1;
+                    float Kd2 = max(dot(L2, N), 0.0);
+                    vec4  diffuse2 = Kd2*uDiffuseProduct2;
+                    float Kd3 = max(dot(L3, N), 0.0);
+                    vec4  diffuse3 = Kd3*uDiffuseProduct3;
+
+                    float Ks1 = pow( max(dot(N, H1), 0.0), uShininess );
+                    vec4  specular1 = Ks1 * uSpecularProduct1;
+                    if( dot(L1, N) < 0.0 ) specular1 = vec4(0.0, 0.0, 0.0, 1.0);
+                    float Ks2 = pow( max(dot(N, H2), 0.0), uShininess );
+                    vec4  specular2 = Ks2 * uSpecularProduct2;
+                    if( dot(L2, N) < 0.0 ) specular2 = vec4(0.0, 0.0, 0.0, 1.0);
+                    float Ks3 = pow( max(dot(N, H3), 0.0), uShininess );
+                    vec4  specular3 = Ks3 * uSpecularProduct3;
+                    if( dot(L3, N) < 0.0 ) specular3 = vec4(0.0, 0.0, 0.0, 1.0);
+
+                    vColor = (ambient1 + diffuse1 + specular1 + ambient2 + diffuse2 + specular2 + ambient3 + diffuse3 + specular3)*uLight;
+                    vColor.a = 1.0;
+                }
+            }
+            // Cylinder shader
+            if (uCyl==1.0)
+                gl_Position = uProjectionMatrix* uModelViewMatrixCyl * aPosition;
+        }
+        </script>
+
+        <script id="fragment-shader" type="x-shader/x-fragment">
+        #version 300 es
+        precision highp float;
+
+        in vec2 vTexCoord;
+        in vec3 N, E, L1, L2, L3;
+        in vec4 vColor;
+
+        out vec4 fColor;
+
+        uniform mat4 uModelViewMatrix, uProjectionMatrix;
+        uniform mat3 uNormalMatrix;
+        uniform vec4 uAmbientProduct1, uDiffuseProduct1, uSpecularProduct1;
+        uniform vec4 uAmbientProduct2, uDiffuseProduct2, uSpecularProduct2;
+        uniform vec4 uAmbientProduct3, uDiffuseProduct3, uSpecularProduct3;
+        uniform vec4 uLightPosition1, uLightPosition2, uLightPosition3;
+        uniform float uShininess, uShader, uLight, uTexture, uCyl;
+        uniform sampler2D uTextureMap;
+
+        void main(){
+            // Texture toggled (Phong model but using the texture)
+            if(uTexture==1.0){
+                vec3 H1 = normalize(L1 + E);
+                vec3 H2 = normalize(L2 + E);
+                vec3 H3 = normalize(L3 + E);
+                vec4 N = texture(uTextureMap, vTexCoord);
+                vec3 NN =  normalize(2.0*N.xyz-1.0);
+
+                // Compute terms in the illumination equation
+                vec4 ambient1 = uAmbientProduct1;
+                vec4 ambient2 = uAmbientProduct2;
+                vec4 ambient3 = uAmbientProduct3;
+
+                float Kd1 = max(dot(NN, L1), 0.0);
+                vec4  diffuse1 = Kd1*uDiffuseProduct1;
+                float Kd2 = max(dot(NN, L2), 0.0);
+                vec4  diffuse2 = Kd2*uDiffuseProduct2;
+                float Kd3 = max(dot(NN, L3), 0.0);
+                vec4  diffuse3 = Kd3*uDiffuseProduct3;
+
+                float Ks1 = pow( max(dot(NN, H1), 0.0), uShininess );
+                vec4  specular1 = Ks1 * uSpecularProduct1;
+                if( dot(L1, NN) < 0.0 ) specular1 = vec4(0.0, 0.0, 0.0, 1.0);
+                float Ks2 = pow( max(dot(NN, H2), 0.0), uShininess );
+                vec4  specular2 = Ks2 * uSpecularProduct2;
+                if( dot(L2, NN) < 0.0 ) specular2 = vec4(0.0, 0.0, 0.0, 1.0);
+                float Ks3 = pow( max(dot(NN, H3), 0.0), uShininess );
+                vec4  specular3 = Ks3 * uSpecularProduct3;
+                if( dot(L3, NN) < 0.0 ) specular3 = vec4(0.0, 0.0, 0.0, 1.0);
+
+                fColor = (ambient1 + diffuse1 + specular1 + ambient2 + diffuse2 + specular2 + ambient3 + diffuse3 + specular3)*uLight;
+                fColor.a = 1.0;
+            }
+            // Texture not toggled
+            else{
+                // Shader toggled -> per-vertex shading mode
+                if(uShader==1.0){
+                    fColor = vColor;
+                }
+                // Shader not toggled -> per-fragment shading mode
+                else{
+                    vec3 H1 = normalize(L1 + E);
+                    vec3 H2 = normalize(L2 + E);
+                    vec3 H3 = normalize(L3 + E);
+                    // Compute terms in the illumination equation
+                    vec4 ambient1 = uAmbientProduct1;
+                    vec4 ambient2 = uAmbientProduct2;
+                    vec4 ambient3 = uAmbientProduct3;
+
+                    float Kd1 = max(dot(L1, N), 0.0);
+                    vec4  diffuse1 = Kd1*uDiffuseProduct1;
+                    float Kd2 = max(dot(L2, N), 0.0);
+                    vec4  diffuse2 = Kd2*uDiffuseProduct2;
+                    float Kd3 = max(dot(L3, N), 0.0);
+                    vec4  diffuse3 = Kd3*uDiffuseProduct3;
+
+                    float Ks1 = pow( max(dot(N, H1), 0.0), uShininess );
+                    vec4  specular1 = Ks1 * uSpecularProduct1;
+                    if( dot(L1, N) < 0.0 ) specular1 = vec4(0.0, 0.0, 0.0, 1.0);
+                    float Ks2 = pow( max(dot(N, H2), 0.0), uShininess );
+                    vec4  specular2 = Ks2 * uSpecularProduct2;
+                    if( dot(L2, N) < 0.0 ) specular2 = vec4(0.0, 0.0, 0.0, 1.0);
+                    float Ks3 = pow( max(dot(N, H3), 0.0), uShininess );
+                    vec4  specular3 = Ks3 * uSpecularProduct3;
+                    if( dot(L3, N) < 0.0 ) specular3 = vec4(0.0, 0.0, 0.0, 1.0);
+
+                    fColor = (ambient1 + diffuse1 + specular1 + ambient2 + diffuse2 + specular2 + ambient3 + diffuse3 + specular3)*uLight;
+                    fColor.a = 1.0;
+                }
+            }
+            // Cylinder shader
+            if (uCyl==1.0){
+                vec4 emissive_vec = vec4(0.0, 0.3, 0.3, 1.0);
+                // ambient+emissive vector
+                fColor = emissive_vec+(uAmbientProduct1+uAmbientProduct2+uAmbientProduct3)*uLight;
+                fColor.a = 1.0;
+            }
+        }
+        </script>
+
+        <script src="../Common/initShaders.js"></script>
+        <script src="../Common/MVnew.js"></script>
+        <script src="Homework1.js"></script>
+
+    </body>
+</html>
