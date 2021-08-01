@@ -1,0 +1,46 @@
+<h1 id="reinforcement-learning-project">Reinforcement Learning project</h1>
+<p>This project is an implementation of the Soft Actor Critic (SAC) algorithm applied to the MuJoCo environment &quot;<a
+        href="https://gym.openai.com/envs/Ant-v2/">Ant-v2</a>&quot;. It is based on the paper &quot;<a
+        href="https://arxiv.org/abs/1801.01290">Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement
+        Learning with a Stochastic Actor</a>&quot;.</p>
+<p>Please follow the instructions to compile and run our project.</p>
+<h3 id="install-anaconda">Install Anaconda</h3>
+<p>We have used the <a href="https://docs.anaconda.com/anaconda/install/">Anaconda framework</a></p>
+<p>As you may see, it is available for several OSs but since the supported distributions of MuJoCo are either for Linux
+    or for OS X, we suggest to choose one of these two OSs.</p>
+<h3 id="mujoco-license">MuJoCo license</h3>
+<ol style="list-style-type: decimal">
+    <li>Ask for a <a href="https://www.roboti.us/license.html">MuJoCo license</a> following 'Step 1' instructions</li>
+    <li>Register your PC by compiling the 'Step 3' form.</li>
+</ol>
+<h3 id="install-mujoco">Install MuJoCo</h3>
+<p>Please follow the <a href="https://github.com/openai/mujoco-py/">instructions</a> to correctly install MuJoCo</p>
+<p>We provide you a <a
+        href="https://www.chenshiyu.top/blog/2019/06/19/Tutorial-Installation-and-Configuration-of-MuJoCo-Gym-Baselines/">working
+        tutorial</a></p>
+<h3 id="run-the-project">Run the project</h3>
+<p>You may need additional requirements that are listed below. These can be added by installing it in the Anaconda
+    environment that you have chosen to run the project as follows:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pip</span> install gym
+<span class="kw">sudo</span> apt-get install python-opengl -y
+<span class="kw">sudo</span> apt install xvfb -y
+<span class="kw">pip</span> install pyvirtualdisplay
+<span class="kw">pip</span> install piglet</code></pre>
+<p>The following commands are required to install the package with the algorithm:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> rl_project
+<span class="kw">pip</span> install -e sac/.</code></pre>
+<p>To finally run the project, we provide you two Python Notebooks that differ in the type of training and in the
+    adopted environment:<br>
+    - &quot;project_ant.ipynb&quot;, Soft Actor-Critic tested on 'Ant-v2' environment (with a stronger training inspired
+    by the SpinningUp Documentation);<br>
+    - &quot;project_car.ipynb&quot;, Soft Actor-Critic tested on
+    'MountainCarContinuous-v0' environment (with a fast and simple training).</p>
+<h4 id="results">Results</h4>
+<p>We provide in the 'videos' folder some videos that represent our work and in the 'results' folder some related plots.
+    We distinguish them with the 'ant_' or 'car_' prefixes, that denote the outcomes of &quot;project_ant.ipynb&quot; or
+    &quot;project_car.ipynb&quot; respectively.</p>
+<p>The improvements that the algorithm has introduced are visible by comparing the provided videos of a random agent
+    (&quot;ant/car_init.avi&quot;) against a sac-trained agent (&quot;ant/car_sac.avi&quot;).</p>
+<h2 id="authors">Authors</h2>
+<p>Leandro Maglianella - 1792507</p>
+<p>Lorenzo Nicoletti - 1797464</p>
