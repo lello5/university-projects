@@ -1,0 +1,77 @@
+CREATE TABLE Customer
+	(customer_id 		NUMBER(8) 		PRIMARY KEY,
+	 company_name 	VARCHAR2(30),
+	 contact_name 	VARCHAR2(30)	NOT NULL,
+	 address 		VARCHAR2(30),
+	 email_address 	VARCHAR2(30),
+	 contact_no 		NUMBER(10) 		NOT NULL)
+
+
+CREATE TABLE Model
+	(model_id		NUMBER(8) 		PRIMARY KEY,
+	 model 		VARCHAR2(30),
+	 make 			VARCHAR2(30),
+	 vehicles_no		NUMBER(2) 		NOT NULL CHECK( vehicles_no > 0),
+	 hourly_rate 		NUMBER(3)		NOT NULL CHECK( hourly_rate > 0))
+
+
+CREATE TABLE Vehicle
+	(registration_no 	NUMBER(8)		PRIMARY KEY,
+	 registration_date 	DATE 			NOT NULL,
+	 colour 		VARCHAR2(15),
+	 model_id 		NUMBER(8) 		REFERENCES Model(model_id))
+
+
+CREATE TABLE Booking
+	(booking_id 		NUMBER(8)		PRIMARY KEY,
+	 trip_details		VARCHAR2(50),
+	 booking_date		DATE			NOT NULL,
+	 destination 		VARCHAR2(30)	NOT NULL,
+	 passengers_no	NUMBER(3) 		NOT NULL CHECK( passengers_no > 0),
+	 customer_id 		NUMBER(8) 		REFERENCES Customer(customer_id),
+	 registration_no 	NUMBER(8)		REFERENCES Vehicle(registration_no))
+
+
+
+
+
+
+
+CREATE TABLE Employee
+	(employee_id		NUMBER(8) 		PRIMARY KEY,
+	 NIN 			VARCHAR2(9)		NOT NULL UNIQUE,
+	 name			VARCHAR2(30) 	NOT NULL,
+	 address 		VARCHAR2(30) 	NOT NULL,
+	 home_tel_no 		NUMBER(10)		NOT NULL,
+	 DOB			DATE,
+	 gender		VARCHAR2(1)		CHECK(gender = 'm' OR gender = 'f'),
+	 job_description 	VARCHAR2(20) 	NOT NULL,
+	 annual_salary 	NUMBER(7) 		NOT NULL)
+
+
+CREATE TABLE Booking_Employee
+	(booking_id 		NUMBER(8) 		REFERENCES Booking(booking_id),
+	 employee_id 		NUMBER(8) 		REFERENCES Employee(employee_id),
+	 PRIMARY KEY(booking_id, employee_id))
+
+
+
+CREATE TABLE Licence
+	(employee_id 		NUMBER(8) 		REFERENCES Employee(employee_id),
+	 licence_no		VARCHAR2(16),
+	 expiry_date 		DATE,
+	 licence_type 		VARCHAR2(20) 		CHECK(licence_type = 'driver licence' OR licence_type = 'PCV' OR licence_type = 'CPC'),
+	 PRIMARY KEY(employee_id, licence_no, expiry_date))
+
+
+CREATE TABLE Test
+	(test_id 		NUMBER(8) 		PRIMARY KEY,
+	 type 			VARCHAR2(10) 	CHECK(type = 'alcohol' OR type = 'drug'))
+
+
+CREATE TABLE Result
+	(employee_id 		NUMBER(8) 		REFERENCES Employee(employee_id),
+	 test_id		NUMBER(8) 		REFERENCES Test(test_id),
+	 result_date 		DATE,
+	 result 			VARCHAR2(20) 	NOT NULL,
+	 PRIMARY KEY(employee_id, test_id, result_date))
