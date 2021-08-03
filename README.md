@@ -21,3 +21,7 @@ This repository contains the projects I developed during my academic years at ["
 - **Neural Networks:** [Radiograph images classification](./Master%20degree/Neural%20Networks) (COVID-19, Pneumonia or Normal). The study is performed by creating and training a model based on one of the major state-of-the-art Neural Networks, ResNet50: this network is here modified and is able to gain even better results thanks to the application of transfer learning and, in particular, fine-tuning and progressive resizing.
 - **Interactive Graphics:** Two homeworks centered on realizing basics of Computer Graphics like rendering a scene, shadowing, variable lighting and animations with WebGL. The [final project](./Master%20degree/Interactive%20Graphics/project) is realized with the BabylonJS framework and is a simplified re-implementation of the Mario Kart racing game from Nintendo.
 - **Natural Language Processing:** Two homeworks on [Word-in-Context Disambiguation](./Master%20degree/Natural%20Language%20Processing/HW1) (WiCD) and on [Word Sense Disambiguation](./Master%20degree/Natural%20Language%20Processing/HW2) (WSD) using PyTorch. The first homework uses Recurrent Neural Networks, like LSTMs and GRUs, that aims to understand whether a word shares the same semantic meaning in a pair of sentences. The second project is fully based on BERT Transformers trained to output the most likely semantic meaning of an ambiguous word occurring in a context.
+
+## Author
+
+[**Leandro Maglianella**](https://www.linkedin.com/in/leandro-maglianella-9807901ab/)
