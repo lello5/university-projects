@@ -1,0 +1,5 @@
+2021-09-04T15:09:59.227724336Z  * Serving Flask app "app" (lazy loading)
+2021-09-04T15:09:59.227756680Z  * Environment: production
+2021-09-04T15:09:59.227759820Z    WARNING: This is a development server. Do not use it in a production deployment.
+2021-09-04T15:09:59.227762174Z    Use a production WSGI server instead.
+2021-09-04T15:09:59.227764294Z  * Debug mode: off
