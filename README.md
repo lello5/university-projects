@@ -1,4 +1,4 @@
-![logo](./Bachelor degree/sapienza.jpg)
+![logo](./Bachelor%20degree/sapienza.jpg)
 # University Projects
 This repository contains the projects I developed during my academic years at ["Università di Roma, La Sapienza"](https://www.uniroma1.it/it/pagina-strutturale/home) and at the [Kingston University](https://www.kingston.ac.uk/) (during my two ERASMUS periods).
 
