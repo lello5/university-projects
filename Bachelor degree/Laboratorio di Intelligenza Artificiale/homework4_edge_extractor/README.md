@@ -1,0 +1,2 @@
+Affinchè si produca il risultato voluto, è necessario pubblicare dei messaggi (sensor_msgs::CompressedImage) sul topic "/default/camera_node/image/compressed".
+Il nodo edge_extractor.cpp, in ascolto su questo topic, eseguirà una conversione e un filtering delle immagini.
