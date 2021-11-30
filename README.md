@@ -19,7 +19,9 @@ This repository contains the projects I developed during my academic years at ["
   
   - **Professional Environments:** [Three Technical Reports](./Bachelor%20degree/ERASMUS%202/Professional%20Environments) about Artificial Intelligence, Quantum Computing and Encryption.
 
-- **Sistemi di Calcolo:** [C codes](./Bachelor%20degree/Sistemi%20di%20Calcolo/Code) produced during the course.
+- **Sistemi di Calcolo:** A set of [C codes](./Bachelor%20degree/Sistemi%20di%20Calcolo/Code) produced during the course.
+
+- **Laboratorio di Intelligenza Artificiale:** A set of [six homeworks](./Bachelor%20degree/Laboratorio%20di%20Intelligenza%20Artificiale) about interacting with a robotic mobile base, executing a task, image processing, computer vision and planning using ROS and C++.
 
 - **Thesis:** My Bachelor Degree's [final Thesis](./Bachelor%20degree/Tesi/My_thesis.pdf) "Navigazione autonoma di robot in ambiente indoor". Here I describe intelligent agents and the used softwares, then, the stages I faced during the project: mapping, auto-localization of the robot inside the map and path planning to reach a goal. The project was developed on Ubuntu 16.04 operative system in C++ and using the [Robot Operating System](https://www.ros.org/) (ROS) framework. 
 
