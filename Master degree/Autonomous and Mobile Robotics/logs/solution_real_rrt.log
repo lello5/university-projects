@@ -1,0 +1,210 @@
+OMPL version 
+Experiment NO_NAME
+0 experiment properties
+Running on lorenzo-VirtualBox
+Starting at 2022-01-26 21:20:42
+<<<|
+Properties of the state space 'CompoundSpace5'
+  - signature: 12 0 5 4 3 1 2 2 1 2 1 2 1 
+  - dimension: 5
+  - extent: 7.38423
+  - sanity checks for state space passed
+  - probability of valid states: 0.024
+  - average length of a valid motion: 0.451236
+  - average number of samples drawn per second: sampleUniform()=9.71619e+06 sampleUniformNear()=9.20827e+06 sampleGaussian()=4.43009e+06
+Settings for the state space 'CompoundSpace5'
+  - state validity check resolution: 1%
+  - valid segment count factor: 1
+  - state space:
+Compound state space 'CompoundSpace5' of dimension 5 [
+Compound state space 'SE2CompoundSpace0' of dimension 3 (locked) [
+Real vector state space 'RealVectorSpace1' of dimension 2 with bounds: 
+  - min: 0 0 
+  - max: 3 3 
+ of weight 1
+SO2 state space 'SO2Space2'
+ of weight 0.5
+]
+Registered projections:
+  - <default>
+Projection of dimension 2
+Cell sizes (computed defaults): [0.15 0.15]
+ of weight 1
+SO2 state space 'SO2Space3'
+ of weight 0.5
+SO2 state space 'SO2Space4'
+ of weight 0
+]
+No registered projections
+
+Declared parameters:
+longest_valid_segment_fraction = 0.01
+max_control_duration = 10
+min_control_duration = 1
+propagation_step_size = 0.1
+valid_segment_count_factor = 1
+Valid state sampler named uniform with parameters:
+nr_attempts = 100
+  - control space:
+Compound control space 'Control[CompoundSpace5]' [
+Discrete control space 'DiscreteControl[CompoundSpace5]' with bounds [-2, 2]
+Discrete control space 'DiscreteControl[CompoundSpace5]' with bounds [-5, 5]
+]
+  - can propagate backward: yes
+  - propagation step size: 0.1
+  - propagation duration: [1, 10]
+Planner RRT specs:
+Multithreaded:                 No
+Reports approximate solutions: Yes
+Can optimize solutions:        No
+Aware of the following parameters: goal_bias intermediate_states
+Declared parameters for planner RRT:
+goal_bias = 0.3
+intermediate_states = 0
+Start states:
+Compound state [
+Compound state [
+RealVectorState [2 2.3]
+SO2State [0.785398]
+]
+SO2State [0]
+SO2State [0]
+]
+Goal state, threshold = 0.25, memory address = 0x557c2ec7af20, state = 
+Compound state [
+Compound state [
+RealVectorState [1.5 0.5]
+SO2State [1.5708]
+]
+SO2State [0]
+SO2State [0]
+]
+OptimizationObjective = nullptr
+There are 0 solutions
+
+Properties of benchmarked planners:
+Planner RRT specs:
+Multithreaded:                 No
+Reports approximate solutions: Yes
+Can optimize solutions:        No
+Aware of the following parameters: goal_bias intermediate_states
+|>>>
+<<<|
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Byte Order:                      Little Endian
+Address sizes:                   39 bits physical, 48 bits virtual
+CPU(s):                          1
+On-line CPU(s) list:             0
+Thread(s) per core:              1
+Core(s) per socket:              1
+Socket(s):                       1
+NUMA node(s):                    1
+Vendor ID:                       GenuineIntel
+CPU family:                      6
+Model:                           142
+Model name:                      Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+Stepping:                        12
+CPU MHz:                         1992.004
+BogoMIPS:                        3984.00
+Hypervisor vendor:               KVM
+Virtualization type:             full
+L1d cache:                       32 KiB
+L1i cache:                       32 KiB
+L2 cache:                        256 KiB
+L3 cache:                        8 MiB
+NUMA node0 CPU(s):               0
+Vulnerability Itlb multihit:     KVM: Mitigation: VMX unsupported
+Vulnerability L1tf:              Not affected
+Vulnerability Mds:               Not affected
+Vulnerability Meltdown:          Not affected
+Vulnerability Spec store bypass: Vulnerable
+Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:        Mitigation; Full generic retpoline, STIBP disabled, RSB filling
+Vulnerability Srbds:             Mitigation; TSX disabled
+Vulnerability Tsx async abort:   Not affected
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq monitor ssse3 cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single fsgsbase avx2 invpcid rdseed clflushopt md_clear flush_l1d arch_capabilities
+|>>>
+10866600479040668 is the random seed
+45 seconds per run
+10000 MB per run
+50 runs per planner
+1757.86 seconds spent to collect the data
+1 enum type
+status|Unknown status|Invalid start|Invalid goal|Unrecognized goal type|Timeout|Approximate solution|Exact solution|Crash|Unknown status
+1 planners
+control_RRT
+7 common properties
+goal_bias = 0.3
+intermediate_states = 0
+longest_valid_segment_fraction = 0.01
+max_control_duration = 10
+min_control_duration = 1
+propagation_step_size = 0.1
+valid_segment_count_factor = 1
+13 properties for each run
+approximate solution BOOLEAN
+correct solution BOOLEAN
+graph motions INTEGER
+graph states INTEGER
+memory REAL
+solution clearance REAL
+solution difference REAL
+solution length REAL
+solution segments INTEGER
+solved BOOLEAN
+status ENUM
+time REAL
+valid segment fraction REAL
+50 runs
+1; 1; 46564; 46565; 33.2812; 0; 0.472579; 28.1; 65; 0; 5; 45.0928; 0; 
+1; 1; 51850; 51851; 44.6797; 0; 1.16465; 14.4; 31; 0; 5; 45.0426; 0; 
+1; 1; 64111; 64112; 51.8945; 0; 0.642467; 24.9; 56; 0; 5; 45.1503; 0; 
+1; 1; 64513; 64514; 61.9492; 0; 0.363312; 22.8; 55; 0; 5; 45.1321; 0; 
+1; 1; 50844; 50845; 62.4648; 0; 1.07625; 14.5; 34; 0; 5; 45.1386; 0; 
+0; 1; 16491; 16492; 53.8008; 0; 0; 8.8; 22; 1; 6; 7.43362; 0; 
+1; 1; 68727; 68728; 53.8008; 0; 0.30314; 22; 55; 0; 5; 45.1605; 0; 
+0; 1; 19857; 19858; 65.0859; 0; 0; 13.7; 28; 1; 6; 7.77188; 0; 
+1; 1; 65619; 65620; 65.0859; 0; 0.592981; 30.8; 75; 0; 5; 45.0591; 0; 
+0; 1; 45469; 45470; 67.4023; 0; 0; 31.3; 78; 1; 6; 21.7914; 0; 
+0; 1; 28557; 28558; 67.4023; 0; 0; 25.6; 54; 1; 6; 9.80704; 0; 
+1; 1; 69429; 69430; 67.4023; 0; 0.500192; 28.6; 70; 0; 5; 45.0627; 0; 
+1; 1; 59422; 59423; 69.4648; 0; 0.307744; 29.6; 64; 0; 5; 45.0433; 0; 
+0; 1; 31146; 31147; 69.4648; 0; 0; 30.6; 64; 1; 6; 14.3082; 0; 
+1; 1; 65900; 65901; 69.4648; 0; 0.30276; 23.3; 61; 0; 5; 45.0131; 0; 
+1; 1; 75490; 75491; 69.4648; 0; 0.360963; 13.2; 31; 0; 5; 45.07; 0; 
+1; 1; 56565; 56566; 73.8477; 0; 1.1146; 6.8; 18; 0; 5; 45.0981; 0; 
+0; 1; 80494; 80495; 73.8477; 0; 0; 30.8; 70; 1; 6; 36.6869; 0; 
+1; 1; 62370; 62371; 75.6523; 0; 0.326553; 19.3; 39; 0; 5; 45.0047; 0; 
+0; 1; 19056; 19057; 75.6523; 0; 0; 14; 29; 1; 6; 6.31119; 0; 
+0; 1; 6441; 6442; 75.6523; 0; 0; 27.2; 59; 1; 6; 1.64828; 0; 
+0; 1; 5014; 5015; 75.6523; 0; 0; 11.1; 22; 1; 6; 1.21954; 0; 
+1; 1; 69786; 69787; 75.6523; 0; 0.886292; 10.1; 23; 0; 5; 45.0556; 0; 
+0; 1; 2209; 2210; 75.6523; 0; 0; 17.3; 41; 1; 6; 0.513219; 0; 
+1; 1; 56400; 56401; 75.6523; 0; 1.07819; 12.1; 32; 0; 5; 45.0198; 0; 
+1; 1; 59982; 59983; 75.6523; 0; 0.891915; 19.2; 46; 0; 5; 45.1248; 0; 
+0; 1; 23459; 23460; 75.6523; 0; 0; 28.4; 71; 1; 6; 9.67752; 0; 
+1; 1; 59089; 59090; 75.6523; 0; 1.0245; 29.6; 60; 0; 5; 45.0848; 0; 
+1; 1; 65755; 65756; 75.6523; 0; 1.0858; 13.4; 32; 0; 5; 45.1265; 0; 
+1; 1; 57222; 57223; 75.6523; 0; 1.03611; 16.4; 39; 0; 5; 45.1397; 0; 
+1; 1; 56565; 56566; 75.6523; 0; 1.39885; 23.5; 45; 0; 5; 45.0926; 0; 
+1; 1; 66157; 66158; 75.6523; 0; 0.733833; 19.4; 40; 0; 5; 45.1519; 0; 
+1; 1; 72076; 72077; 75.6523; 0; 1.00391; 32.5; 73; 0; 5; 45.1153; 0; 
+0; 1; 1689; 1690; 75.6523; 0; 0; 19.8; 42; 1; 6; 0.372201; 0; 
+1; 1; 54029; 54030; 75.6523; 0; 0.761597; 17.9; 47; 0; 5; 45.0967; 0; 
+1; 1; 64796; 64797; 75.6523; 0; 1.0657; 11.2; 30; 0; 5; 45.1818; 0; 
+1; 1; 65875; 65876; 75.6523; 0; 0.658843; 18.8; 41; 0; 5; 45.0753; 0; 
+1; 1; 73561; 73562; 76.6836; 0; 0.644314; 48.2; 112; 0; 5; 45.0974; 0; 
+1; 1; 50047; 50048; 76.9414; 0; 1.02653; 34.3; 80; 0; 5; 45.1698; 0; 
+1; 1; 58702; 58703; 76.9414; 0; 1.13714; 13.8; 31; 0; 5; 45.0453; 0; 
+1; 1; 54719; 54720; 76.9414; 0; 0.357589; 36; 73; 0; 5; 45.1413; 0; 
+0; 1; 1140; 1141; 76.9414; 0; 0; 17.5; 39; 1; 6; 0.24352; 0; 
+1; 1; 69390; 69391; 76.9414; 0; 0.652949; 33.8; 91; 0; 5; 45.0463; 0; 
+1; 1; 52853; 52854; 76.9414; 0; 1.02912; 8; 15; 0; 5; 45.1302; 0; 
+1; 1; 52608; 52609; 76.9414; 0; 1.07039; 18.4; 41; 0; 5; 45.1034; 0; 
+0; 1; 52407; 52408; 76.9414; 0; 0; 31.6; 72; 1; 6; 26.2876; 0; 
+1; 1; 73829; 73830; 76.9414; 0; 0.295192; 43.1; 94; 0; 5; 45.0321; 0; 
+0; 1; 45467; 45468; 76.9414; 0; 0; 39.6; 79; 1; 6; 27.3156; 0; 
+1; 1; 63541; 63542; 76.9414; 0; 1.07338; 14.5; 36; 0; 5; 45.0072; 0; 
+1; 1; 58035; 58036; 76.9414; 0; 0.27121; 28.6; 62; 0; 5; 45.0852; 0; 
+.
