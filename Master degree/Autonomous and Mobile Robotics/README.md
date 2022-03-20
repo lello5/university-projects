@@ -56,7 +56,7 @@ This will create an image of the search tree graph that can be used as the ```--
 
 ## Experiments and results
 
-The following experiments have been executed with the same parameter settings (please, refer to the [report](/report.pdf) for further details), each for a total amount of 50 runs collected through benchmarks and stored in the ```logs``` folder.
+The following experiments have been executed with the same parameter settings (please, refer to the [report](./report.pdf) for further details), each for a total amount of 50 runs collected through benchmarks and stored in the ```logs``` folder.
 
 You can find some of these solution samples in the environment-related sections below.
 
@@ -74,7 +74,7 @@ You can find some of these solution samples in the environment-related sections 
 
 RRT             |  SST
 :-------------------------:|:-------------------------:
-<img src="/solution_to_video/solution_forward/rrt/solution_forward_rrt_path.gif" width="450" height="300"/>  | <img src="/solution_to_video/solution_forward/sst/solution_forward_sst_path.gif" width="450" height="300"/>
+<img src="./solution_to_video/solution_forward/rrt/solution_forward_rrt_path.gif" width="450" height="300"/>  | <img src="./solution_to_video/solution_forward/sst/solution_forward_sst_path.gif" width="450" height="300"/>
 
 ### Experiment 2: Simple backward motion
 
@@ -89,7 +89,7 @@ RRT             |  SST
 
 RRT             |  SST
 :-------------------------:|:-------------------------:
-<img src="/solution_to_video/solution_backward/rrt/solution_backward_rrt_path.gif" width="450" height="300"/> | <img src="/solution_to_video/solution_backward/sst/solution_backward_sst_path.gif" width="450" height="300"/>
+<img src="./solution_to_video/solution_backward/rrt/solution_backward_rrt_path.gif" width="450" height="300"/> | <img src="./solution_to_video/solution_backward/sst/solution_backward_sst_path.gif" width="450" height="300"/>
 
 ### Experiment 3: Circular obstacles avoidance
 
@@ -105,7 +105,7 @@ RRT             |  SST
 
 SST (with min path length)             |  SST (with max clearance)
 :-------------------------:|:-------------------------:
-<img src="/solution_to_video/solution_obstacles/length/solution_obstacles_path.gif" width="450" height="300"/>  | <img src="/solution_to_video/solution_obstacles/clearance/solution_obstacles_path.gif" width="450" height="300"/>
+<img src="./solution_to_video/solution_obstacles/length/solution_obstacles_path.gif" width="450" height="300"/>  | <img src="./solution_to_video/solution_obstacles/clearance/solution_obstacles_path.gif" width="450" height="300"/>
 
 ### Experiment 4: Three point turn
 
@@ -122,11 +122,11 @@ SST (with min path length)             |  SST (with max clearance)
 
 RRT | SST        
 :-------------------------:|:-------------------------:
-<img src="/solution_to_video/solution_turn/rrt/solution_turn_rrt_path.gif" width="450" height="300"/> | <img src="/solution_to_video/solution_turn/sst/solution_turn_sst_path.gif" width="450" height="300"/> 
+<img src="./solution_to_video/solution_turn/rrt/solution_turn_rrt_path.gif" width="450" height="300"/> | <img src="./solution_to_video/solution_turn/sst/solution_turn_sst_path.gif" width="450" height="300"/> 
 
 <h4 align="center">CL-RRT</h4>
 <p align="center">
-  <img width="450" height="300" src="/solution_to_video/solution_turn/clrrt/solution_turn_clrrt_path.gif">
+  <img width="450" height="300" src="./solution_to_video/solution_turn/clrrt/solution_turn_clrrt_path.gif">
 </p>
 
 
@@ -144,11 +144,11 @@ RRT | SST
 
 RRT | SST        
 :-------------------------:|:-------------------------:
-<img src="/solution_to_video/solution_real/rrt/solution_real_rrt_path.gif" width="450" height="300"/> | <img src="/solution_to_video/solution_real/sst/solution_real_sst_path.gif" width="450" height="300"/> 
+<img src="./solution_to_video/solution_real/rrt/solution_real_rrt_path.gif" width="450" height="300"/> | <img src="./solution_to_video/solution_real/sst/solution_real_sst_path.gif" width="450" height="300"/> 
 
 <h4 align="center">CL-RRT</h4>
 <p align="center">
-  <img width="450" height="300" src="/solution_to_video/solution_real/clrrt/solution_real_clrrt_path.gif">
+  <img width="450" height="300" src="./solution_to_video/solution_real/clrrt/solution_real_clrrt_path.gif">
 </p>
 
 
