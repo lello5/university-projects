@@ -1,0 +1,17 @@
+IMAGE
+<*,*,*,*>:  img/hard2.png
+----
+TEXT
+<*,*,*,*>:  How many points do you get if you score a free throw?
+----
+TTS
+<*,*,*,*>:  How many points do you get if you score a free throw?
+----
+BUTTONS
+1
+<*,*,*,*>:  1
+2
+<*,*,*,*>:  2
+3
+<*,*,*,*>:  3
+----

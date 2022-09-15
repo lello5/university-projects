@@ -1,0 +1,16 @@
+IMAGE
+<*, *, *, *>:  img/start_lessons.png
+----
+TEXT
+<*,*,*,*>:  Welcome to the basketball course! The course consists of five video tutorials. To start the firts one please press the button.
+----
+GESTURE
+<*,*,*,*>: animations/Stand/Gestures/Hey_1
+----
+TTS
+<*,*,*,*>:  Welcome to the basketball course! The course consists of five video tutorials. To start the first one please press the button.
+----
+BUTTONS
+startlessons
+<*,*,*,*>:  Start Lessons
+----

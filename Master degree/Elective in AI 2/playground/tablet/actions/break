@@ -1,0 +1,15 @@
+IMAGE
+<*,*,*,*>:  img/break.png
+----
+TEXT
+<*,*,*,*>:  Would you like to play a game or listen to music?
+----
+TTS
+<*,*,*,*>:  Would you like to play a game or listen to music? 
+----
+BUTTONS
+game
+<*,*,*,*>:  Game
+music
+<*,*,*,*>:  Music
+----

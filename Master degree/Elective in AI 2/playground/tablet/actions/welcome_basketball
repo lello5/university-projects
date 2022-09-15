@@ -1,0 +1,17 @@
+IMAGE
+<*, *, *, *>:  img/welcome_basketball.png
+----
+TEXT
+<*,*,*,*>:  Welcome to the basketball world! Press the button to start.
+----
+GESTURE
+<*,*,*,*>: animations/Stand/Gestures/Hey_1
+----
+TTS
+<*,*,*,*>:  Welcome to the basketball world! Press the button to start.
+----
+BUTTONS
+start
+<*,*,*,*>:  Start
+----
+

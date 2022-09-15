@@ -1,0 +1,15 @@
+IMAGE
+<*,*,*,*>:  img/easy2.jpg
+----
+TEXT
+<*,*,*,*>:  Are you allowed to hit the ball with your feet during the game?
+----
+TTS
+<*,*,*,*>:  Are you allowed to hit the ball with your feet during the game?
+----
+BUTTONS
+yes
+<*,*,*,*>:  yes
+no
+<*,*,*,*>:  no
+----

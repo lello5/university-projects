@@ -1,0 +1,17 @@
+IMAGE
+<*,*,*,*>:  img/easy3.jpg
+----
+TEXT
+<*,*,*,*>:  How many points do you get if you score inside the area of the opponents?
+----
+TTS
+<*,*,*,*>:  How many points do you get if you score inside the area of the opponents?
+----
+BUTTONS
+2
+<*,*,*,*>:  2
+4
+<*,*,*,*>:  4
+6
+<*,*,*,*>:  6
+----

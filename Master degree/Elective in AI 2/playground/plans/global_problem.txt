@@ -1,0 +1,58 @@
+
+ff: parsing domain file
+domain 'GLOBAL-DOMAIN' defined
+ ... done.
+ff: parsing problem file
+problem 'GLOBAL-PROBLEM' defined
+ ... done.
+
+
+lowest leaf goal distance/initial state f value seen: 100000/100000; maxdepth reached:    0
+                                                           1/     5                       1
+                                                           1/     4                       2
+                                                           1/     4                       3
+                                                           1/     4                       4
+                                                           1/     4                       5
+                                                           1/     4                       6
+
+ff: found plan as follows
+-------------------------------------------------
+  0||0 --- ASK_START --- TRUESON: 1||0 --- FALSESON: 1||1
+-------------------------------------------------
+  1||0 --- CHECK_NEW --- TRUESON: 2||0 --- FALSESON: 2||1
+  1||1 --- TERMINATE --- SON: 2||-1
+-------------------------------------------------
+  2||0 --- CLASSIFY_EVALUATE_USER --- SON: 3||0
+  2||1 --- WARM_UP --- SON: 3||1
+-------------------------------------------------
+  3||0 --- ASK_PLAYERS --- SON: 4||0
+  3||1 --- START_LESSONS --- SON: 4||1
+-------------------------------------------------
+  4||0 --- WARM_UP --- SON: 5||0
+  4||1 --- TERMINATE --- SON: 5||-1
+-------------------------------------------------
+  5||0 --- START_LESSONS --- SON: 6||0
+-------------------------------------------------
+  6||0 --- TERMINATE --- SON: 7||-1
+-------------------------------------------------
+
+tree layers: 7
+total nr. actions: 11
+
+statistics:    0.00 seconds instantiating 10 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 9 facts and 10 actions
+               0.00 seconds creating final representation with 9 relevant facts (7 max U, 5 CNF max U)
+               final representation has 4 unknown facts and 5 observation actions    
+               0.00 seconds building connectivity graph
+               0.00 seconds (   0.00 pure) evaluating 14 states
+               0.00 seconds generating,    0.00 seconds encoding Rplan S-CNFs
+               0.00 seconds in DP for 16 RPG S-CNF implication checks
+               0.00 seconds in DP for 0 RPlan extract S-CNF implication checks (0 lits removed)
+               0.00 seconds generating,    0.00 seconds encoding 29 state transition base CNFs
+               0.00 seconds in DP solving 4 state transition CNFs
+               0.00 seconds checking for self-contradictions, including 0 DP calls
+               0.00 seconds checking for stagnating states (13 hits), including 0 DP calls
+                 20 total DP calls, 84 total UP calls,    0.00 sec membership
+              0.00 seconds for remaining searching duties
+               0.00 seconds total time (+    0.03 secs for CNF memory allocation)
+

@@ -1,0 +1,17 @@
+IMAGE
+<*,*,*,*>:  img/hard1.png
+----
+TEXT
+<*,*,*,*>:  How many seconds can a basketball team keep the ball without passing?
+----
+TTS
+<*,*,*,*>:  How many seconds can a basketball team keep the ball without passing?
+----
+BUTTONS
+10
+<*,*,*,*>:  10
+24
+<*,*,*,*>:  24
+50
+<*,*,*,*>:  50
+----

@@ -1,0 +1,17 @@
+IMAGE
+<*,*,*,*>:  img/easy1.jpg
+----
+TEXT
+<*,*,*,*>:  How many players per team can be on the court?
+----
+TTS
+<*,*,*,*>:  How many players per team can be on the court?
+----
+BUTTONS
+5
+<*,*,*,*>:  5
+7
+<*,*,*,*>:  7
+11
+<*,*,*,*>:  11
+----

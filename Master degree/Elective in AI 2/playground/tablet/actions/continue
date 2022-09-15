@@ -1,0 +1,16 @@
+IMAGE
+<*, *, *, *>:  img/welcome_basketball.png
+----
+TEXT
+<*,*,*,*>: Press the button to continue interaction.
+----
+GESTURE
+<*,*,*,*>: animations/Stand/Gestures/Hey_1
+----
+TTS
+<*,*,*,*>: Press the button to continue interaction.
+----
+BUTTONS
+continue_button
+<*,*,*,*>:  Continue
+----

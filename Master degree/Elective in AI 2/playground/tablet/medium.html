@@ -1,0 +1,59 @@
+<html>
+<head>
+  <script src="qaws.js"></script>
+  <title>Lesson</title>
+
+  <style>
+    body {
+      background-color: #cff;
+      font-family: sans-serif;
+    }
+    
+    iframe {
+      display: block;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #000033;
+      font-weight: bold;
+      font-size: 500%;
+    }
+    
+    input[type=button] {
+      background-color: #993300; /* #A01010 - Red */
+      border: none;
+      border-radius: 24px;
+      color: white;
+      padding: 24px 34px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 24px;
+      margin:10px 10px 10px 10px;
+    }
+  </style>
+  
+</head>
+<!-- status -->
+<div align='right' id='status'> <font color='red'>NOT CONNECTED</font> </div>
+
+<h1 align=center> <div align='center' id=' text_title'>Here is your result</div> </h1>
+
+<div align='center'> 
+  <img height=131 id='image_default' src="img/medium.png" alt="No image"/> </div>
+
+<!-- buttons -->
+  
+
+<script>
+  var ip=window.location.hostname;
+  if (ip=='')
+      ip='127.0.0.1';
+  var port = 9100;
+
+  console.log("Trying connection...")
+  wsrobot_init(ip,port);
+
+</script>
+</html>

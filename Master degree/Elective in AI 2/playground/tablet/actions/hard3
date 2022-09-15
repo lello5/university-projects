@@ -1,0 +1,17 @@
+IMAGE
+<*,*,*,*>:  img/hard3.png
+----
+TEXT
+<*,*,*,*>:  What is the maximum number of fouls that player can make before being disqualified?
+----
+TTS
+<*,*,*,*>:  What is the maximum number of fouls that player can make before being disqualified?
+----
+BUTTONS
+3
+<*,*,*,*>:  3
+5
+<*,*,*,*>:  5
+7
+<*,*,*,*>:  7
+----

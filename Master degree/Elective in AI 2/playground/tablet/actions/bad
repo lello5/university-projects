@@ -1,0 +1,9 @@
+IMAGE
+<*,*,*,*>: img/bad.png
+----
+TEXT
+<*,*,*,*>: The result of the quiz for your level is low but do not worry, it is just the beginning, we will improve it!
+----
+TTS
+<*,*,*,*>: The result of the quiz for your level is low but do not worry, it is just the beginning, we will improve it!
+----

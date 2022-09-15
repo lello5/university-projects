@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Finish</title>
+
+  <script src="qaws.js"></script>
+
+  <style>
+    body {
+      background-color: #cff;
+      font-family: sans-serif;
+    }
+    
+    iframe {
+      display: block;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: #000033;
+      font-weight: bold;
+      font-size: 200%;
+    }
+
+  input[type=button] {
+    background-color: #993300; /* #A01010 - Red */
+    border: none;
+    border-radius: 24px;
+    color: white;
+    padding: 24px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin:10px 10px 10px 10px;
+  }
+
+  </style>
+</head>
+<body>
+
+    <!-- status -->
+    <div align='right' id='status'> <font color='red'>NOT CONNECTED</font> </div>
+
+    <!-- image -->
+    <p>
+    <div align='center'> <img height=300 id='image_default' src="img/welcome_basketball.png" alt="No image"/> </div>
+    </p>
+    
+    <!-- text -->
+
+    <p>
+    <h1>
+    <div align='center' id='text_default'>Congratulations! You have done a great job and finished the course. Keep training on your own to develop your skills even more or come back again and take a course of the higher level!</div>
+    </h1>
+    </p>
+
+  <!-- ****** SCRIPTS ****** -->
+
+  <script>
+
+    var ip=window.location.hostname;
+    if (ip=='')
+        ip='127.0.0.1';
+    var port = 9100;
+
+    console.log("Trying connection...")
+    wsrobot_init(ip,port);
+
+  </script>
+
+</body>
+</html>

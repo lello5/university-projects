@@ -1,0 +1,17 @@
+IMAGE
+<*,*,*,*>:  img/top_three.png
+----
+TEXT
+<*,*,*,*>:  Choose your favourite NBA Top-3 season leader
+----
+TTS
+<*,*,*,*>:  Choose your favourite NBA Top-3 season leader
+----
+BUTTONS
+tatum
+<*,*,*,*>:  Jayson Tatum
+curry
+<*,*,*,*>:  Stephen Curry
+brown
+<*,*,*,*>:  Jaylen Brown
+----

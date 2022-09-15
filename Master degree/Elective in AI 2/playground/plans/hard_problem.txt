@@ -1,0 +1,51 @@
+
+ff: parsing domain file
+domain 'PEPPER-DOMAIN' defined
+ ... done.
+ff: parsing problem file
+problem 'QUIZHARD-PROBLEM' defined
+ ... done.
+
+
+lowest leaf goal distance/initial state f value seen:      2/     2; maxdepth reached:    0
+                                                           2/     2                       1
+                                                           1/     2                       2
+                                                           1/     2                       3
+
+ff: found plan as follows
+-------------------------------------------------
+  0||0 --- ASK_QUIZ HOWMANYSECONDSKEEPBALL --- TRUESON: 1||0 --- FALSESON: 1||1
+-------------------------------------------------
+  1||0 --- ASK_QUIZ HOWMANYPOINTSFREETHROW --- TRUESON: 2||0 --- FALSESON: 2||1
+  1||1 --- ASK_QUIZ HOWMANYPOINTSFREETHROW --- TRUESON: 2||2 --- FALSESON: 2||3
+-------------------------------------------------
+  2||0 --- ASK_QUIZ WHATISMAXNUMFOULS --- TRUESON: 3||0 --- FALSESON: 3||1
+  2||1 --- EVALUATE_MEDIUM HOWMANYSECONDSKEEPBALL HOWMANYPOINTSFREETHROW WHATISMAXNUMFOULS --- SON: 3||-1
+  2||2 --- EVALUATE_MEDIUM HOWMANYPOINTSFREETHROW HOWMANYSECONDSKEEPBALL WHATISMAXNUMFOULS --- SON: 3||-1
+  2||3 --- ASK_QUIZ WHATISMAXNUMFOULS --- TRUESON: 3||2 --- FALSESON: 3||3
+-------------------------------------------------
+  3||0 --- EVALUATE_GOOD HOWMANYSECONDSKEEPBALL WHATISMAXNUMFOULS HOWMANYPOINTSFREETHROW --- SON: 4||-1
+  3||1 --- EVALUATE_MEDIUM HOWMANYSECONDSKEEPBALL WHATISMAXNUMFOULS HOWMANYPOINTSFREETHROW --- SON: 4||-1
+  3||2 --- EVALUATE_MEDIUM WHATISMAXNUMFOULS HOWMANYPOINTSFREETHROW HOWMANYSECONDSKEEPBALL --- SON: 4||-1
+  3||3 --- EVALUATE_BAD HOWMANYSECONDSKEEPBALL WHATISMAXNUMFOULS HOWMANYPOINTSFREETHROW --- SON: 4||-1
+-------------------------------------------------
+
+tree layers: 4
+total nr. actions: 11
+
+statistics:    0.00 seconds instantiating 21 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 8 facts and 21 actions
+               0.00 seconds creating final representation with 7 relevant facts (7 max U, 4 CNF max U)
+               final representation has 6 unknown facts and 8 observation actions    
+               0.00 seconds building connectivity graph
+               0.00 seconds (   0.00 pure) evaluating 435 states
+               0.00 seconds generating,    0.00 seconds encoding Rplan S-CNFs
+               0.00 seconds in DP for 2176 RPG S-CNF implication checks
+               0.00 seconds in DP for 0 RPlan extract S-CNF implication checks (0 lits removed)
+               0.00 seconds generating,    0.00 seconds encoding 652 state transition base CNFs
+               0.00 seconds in DP solving 1070 state transition CNFs
+               0.00 seconds checking for self-contradictions, including 0 DP calls
+               0.00 seconds checking for stagnating states (200 hits), including 2432 DP calls
+               5678 total DP calls, 12990 total UP calls,    0.00 sec membership
+              0.00 seconds for remaining searching duties
+               0.00 seconds total time (+    0.00 secs for CNF memory allocation)

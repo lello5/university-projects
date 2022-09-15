@@ -1,0 +1,82 @@
+<html>
+<head>
+  <script src="qaws.js"></script>
+  <title>Lesson</title>
+
+  <style>
+    body {
+      background-color: #cff;
+      font-family: sans-serif;
+    }
+    
+    iframe {
+      display: block;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #000033;
+      font-weight: bold;
+      font-size: 200%;
+    }
+    
+    input[type=button] {
+      background-color: #993300; /* #A01010 - Red */
+      border: none;
+      border-radius: 24px;
+      color: white;
+      padding: 24px 34px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 24px;
+      margin:10px 10px 10px 10px;
+    }
+  </style>
+  
+</head>
+<!-- status -->
+<div align='right' id='status'> <font color='red'>NOT CONNECTED</font> </div>
+
+<h1 align=center> <div align='center' id=' text_title'>Watch the video lesson 4 for intermediate level!</div> </h1>
+
+<iframe width="600" height="420" src="https://www.youtube.com/embed/v5c5ek3uzuo"> </iframe>
+
+<!-- buttons -->
+  
+<p>
+  <div align='center' id='buttons'>
+    <input type="button" id="b" value="Exit lessons" onclick="exit_lessons()">
+    <input type="button" id="b" value="Take a break!" onclick="take_break()">
+    <input type="button" id="b" value="Previous lesson" onclick="previous_lesson()">
+    <input type="button" id="b" value="Next lesson" onclick="next_lesson()">
+  </div>
+</p>
+
+<script>
+  var ip=window.location.hostname;
+  if (ip=='')
+      ip='127.0.0.1';
+  var port = 9100;
+
+  console.log("Trying connection...")
+  wsrobot_init(ip,port);
+
+  function exit_lessons() {
+    codews.send("\nf = open('/home/robot/playground/status.out','w')\nf.write('exit')\nf.close()\n");
+    window.location.href = 'index.html';
+  }
+  
+  function previous_lesson() {
+    window.location.href = 'intermediate_lesson3.html';
+  } 
+
+  function next_lesson() {
+    window.location.href = 'intermediate_lesson5.html';
+  }
+  
+  function take_break() {
+    window.location.href = 'break.html';
+  }
+</script>
+</html>
